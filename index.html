@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parti sétány vendégház - Luxus pihenés a Balaton partján</title>
+    <title>Fügefa vendégház - Luxus pihenés a Balaton partján</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">Parti sétány vendégház</div>
+            <div class="nav-brand">Fügefa vendégház</div>
             <div class="nav-links">
                 <a href="#home">Főoldal</a>
                 <a href="#about">Rólunk</a>
@@ -25,10 +27,15 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
+        <div class="hero-background">
+            <video autoplay muted loop playsinline class="hero-video" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+                <source src="images/Kenese-short.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Parti sétány vendégház</h1>
+            <h1 class="hero-title">Fügefa vendégház</h1>
             <p class="hero-subtitle">Luxus pihenés a Balaton partján</p>
             <a href="#booking" class="btn btn--primary btn--lg">Foglalás most</a>
         </div>
@@ -37,13 +44,15 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">Üdvözöljük a Parti sétány vendégházban</h2>
+            <h2 class="section-title">Üdvözöljük a Fügefa vendégházban</h2>
             <p class="section-description">
-                Fedezze fel ezt a lenyűgöző vendégházat Balatonkenese szívében, ahol a tó szépsége és a modern kényelem találkozik. 
+                Fedezze fel ezt a lenyűgöző vendégházat Balatonkenese szívében, ahol a tó szépsége és a modern kényelem
+                találkozik.
                 Tökéletes választás nyári vakációkhoz, romantikus hétvégékhez és családi kikapcsolódáshoz.
             </p>
             <p class="section-description">
-                Vendégházunk egyedülálló szabadtéri mozival, fedett terasszal és gyönyörű Balaton-parti elhelyezkedéssel várja Önöket. 
+                Vendégházunk egyedülálló szabadtéri mozival, fedett terasszal és gyönyörű Balaton-parti elhelyezkedéssel
+                várja Önöket.
                 Itt minden pillanat felejthetetlen élménnyé válik.
             </p>
         </div>
@@ -127,41 +136,67 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section gallery">
+    <!-- <section id="gallery" class="section gallery">
         <div class="container">
             <h2 class="section-title">Galéria</h2>
             <div class="gallery-grid">
                 <div class="gallery-item" data-title="Fedett terasz">
-                    <div class="gallery-placeholder gallery-placeholder--1">
-                        <div class="gallery-icon">🏡</div>
-                        <h4>Fedett terasz</h4>
-                        <p>Gyönyörű fedett terasz fehér oszlopokkal, fa bútorokkal és dekoratív csempézéssel</p>
-                    </div>
+                    <img src="images/terasz-1.jpg" alt="Fedett terasz" class="gallery-img">
+                    <h4>Fedett terasz</h4>
+                    <p>Gyönyörű fedett terasz fehér oszlopokkal, fa bútorokkal és dekoratív csempézéssel</p>
                 </div>
-                <div class="gallery-item" data-title="Étkezőterasz">
-                    <div class="gallery-placeholder gallery-placeholder--2">
-                        <div class="gallery-icon">🍽️</div>
-                        <h4>Étkezőterasz</h4>
-                        <p>Hangulatos étkezőterasz fa asztalokkal és kerti kilátással</p>
-                    </div>
+            <div class="gallery-item" data-title="Felszerelt konyha">
+                <div class="gallery-placeholder gallery-placeholder--2">
+                    <div class="gallery-icon">🍽️</div>
+                    <h4>Étkezőterasz</h4>
+                    <p>Hangulatos étkezőterasz fa asztalokkal és kerti kilátással</p>
                 </div>
-                <div class="gallery-item" data-title="Szabadtéri mozi">
-                    <div class="gallery-placeholder gallery-placeholder--3">
-                        <div class="gallery-icon">🎬</div>
-                        <h4>Szabadtéri mozi</h4>
-                        <p>Egyedi szabadtéri mozielélmény projektor képernyővel és kényelmes ülésekkel</p>
-                    </div>
+            </div>
+            <div class="gallery-item" data-title="Szabadtéri mozi">
+                <div class="gallery-placeholder gallery-placeholder--3">
+                    <div class="gallery-icon">🎬</div>
+                    <h4>Szabadtéri mozi</h4>
+                    <p>Egyedi szabadtéri mozielélmény projektor képernyővel és kényelmes ülésekkel</p>
                 </div>
-                <div class="gallery-item" data-title="Pihenőterület">
-                    <div class="gallery-placeholder gallery-placeholder--4">
-                        <div class="gallery-icon">🍷</div>
-                        <h4>Pihenőterület</h4>
-                        <p>Intimebb pihenőzóna borospohárral a fa teraszban</p>
-                    </div>
+            </div>
+            <div class="gallery-item" data-title="Pihenőterület">
+                <div class="gallery-placeholder gallery-placeholder--4">
+                    <div class="gallery-icon">🍷</div>
+                    <h4>Pihenőterület</h4>
+                    <p>Intimebb pihenőzóna borospohárral a fa teraszban</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section> -->
+
+
+<!-- Gallery Section with Slider -->
+<section id="gallery" class="section gallery">
+    <div class="container">
+        <h2 class="section-title">Galéria</h2>
+        <div class="slider">
+            <button class="slider-btn slider-btn--prev">&#10094;</button>
+            <div class="slider-images">
+                <img src="images/terasz-1.jpg" alt="Fedett terasz" class="slider-img active">
+                <img src="images/terasz-2.jpg" alt="Fedett terasz" class="slider-img active">
+                <img src="images/mozi.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/szoba-2.jpg" alt="Szoba" class="slider-img">
+                <img src="images/szoba-2-1.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/szoba-3.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/belter-1.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/belter-konyha.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/furdo.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/wc.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/strand.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <img src="images/strand-tav.jpg" alt="Szabadtéri mozi" class="slider-img">
+                <!-- Add more images as needed -->
+            </div>
+            <button class="slider-btn slider-btn--next">&#10095;</button>
+        </div>
+    </div>
+</section>
+
 
     <!-- Booking Section -->
     <section id="booking" class="section booking">
@@ -209,7 +244,8 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="message">Különleges kérések</label>
-                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Írja le esetleges különleges kéréseit..."></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="4"
+                            placeholder="Írja le esetleges különleges kéréseit..."></textarea>
                     </div>
                     <button type="submit" class="btn btn--primary btn--full-width">Foglalási kérelem küldése</button>
                 </form>
@@ -228,7 +264,7 @@
                     <div class="contact-details">
                         <p><strong>📞 Telefon:</strong> <a href="tel:+36302002941">+36 30 200 2941</a></p>
                         <p><strong>📧 E-mail:</strong> <a href="mailto:info@partisétány.hu">info@partisétány.hu</a></p>
-                        <p><strong>📍 Cím:</strong> Balatonkenese 8174, Parti sétány 102</p>
+                        <p><strong>📍 Cím:</strong> Balatonkenese 8174, Fügefa 102</p>
                     </div>
                 </div>
             </div>
@@ -240,7 +276,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Parti sétány vendégház</h4>
+                    <h4>Fügefa vendégház</h4>
                     <p>Luxus pihenés a Balaton partján</p>
                 </div>
                 <div class="footer-section">
@@ -251,16 +287,17 @@
                 </div>
                 <div class="footer-section">
                     <h4>Cím</h4>
-                    <p>Balatonkenese 8174</p>
+                    <p>8174, Balatonkenese</p>
                     <p>Parti sétány 102</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Parti sétány vendégház. Minden jog fenntartva.</p>
+                <p>&copy; 2025 Fügefa vendégház. Minden jog fenntartva.</p>
             </div>
         </div>
     </footer>
 
     <script src="app.js"></script>
 </body>
+
 </html>

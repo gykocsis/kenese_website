@@ -518,3 +518,124 @@ function enhanceBookingForm() {
         checkoutInput.addEventListener('change', updatePricingPreview);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderImagesContainer = document.querySelector('.slider-images');
+    const images = document.querySelectorAll('.slider-img');
+    const prevBtn = document.querySelector('.slider-btn--prev');
+    const nextBtn = document.querySelector('.slider-btn--next');
+    let current = 0;
+    let autoplayInterval = null;
+
+    function updateSlider() {
+        images.forEach((img, idx) => {
+            if (idx === current) {
+                img.classList.add('active');
+            } else {
+                img.classList.remove('active');
+            }
+        });
+        const offset = -current * images[0].clientWidth;
+        sliderImagesContainer.style.transform = `translateX(${offset}px)`;
+    }
+
+    function startAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+        autoplayInterval = setInterval(() => {
+            current = (current + 1) % images.length;
+            updateSlider();
+        }, 4000); // 4 seconds
+    }
+
+    function stopAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        current = (current - 1 + images.length) % images.length;
+        updateSlider();
+        startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        current = (current + 1) % images.length;
+        updateSlider();
+        startAutoplay();
+    });
+
+    // Touch support for mobile
+    let startX = null;
+    sliderImagesContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    sliderImagesContainer.addEventListener('touchend', (e) => {
+        if (startX === null) return;
+        const endX = e.changedTouches[0].clientX;
+        if (endX - startX > 50) {
+            // Swipe right
+            current = (current - 1 + images.length) % images.length;
+            updateSlider();
+            startAutoplay();
+        } else if (startX - endX > 50) {
+            // Swipe left
+            current = (current + 1) % images.length;
+            updateSlider();
+            startAutoplay();
+        }
+        startX = null;
+    });
+
+    // Open larger image in modal when clicked
+    images.forEach((img) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function () {
+            showImageModal(img.src, img.alt);
+        });
+    });
+
+    function showImageModal(src, alt) {
+        // Remove existing modal
+        const existingModal = document.querySelector('.slider-image-modal');
+        if (existingModal) existingModal.remove();
+
+        // Create modal
+        const modal = document.createElement('div');
+        modal.className = 'slider-image-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        `;
+        const imgEl = document.createElement('img');
+        imgEl.src = src;
+        imgEl.alt = alt;
+        imgEl.style.cssText = `
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+        `;
+        modal.appendChild(imgEl);
+        document.body.appendChild(modal);
+
+        // Close modal on click or escape
+        modal.addEventListener('click', () => modal.remove());
+        document.addEventListener('keydown', function escListener(e) {
+            if (e.key === 'Escape') {
+                modal.remove();
+                document.removeEventListener('keydown', escListener);
+            }
+        });
+    }
+
+    // Set initial position and start autoplay
+    updateSlider();
+    startAutoplay();
+});
