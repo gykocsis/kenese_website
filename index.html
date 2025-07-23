@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fügefa vendégház - Luxus pihenés a Balaton partján</title>
+    <title>Fügefa vendégház - Családbarát pihenés Balatonkenesén</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,7 +12,10 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">Fügefa vendégház</div>
+            <div class="nav-brand" style="display: flex; align-items: center; gap: 12px;">
+                <img src="images/9x16_Fig_tree_logo__minimal_style__th.png" alt="Fügefa logo" class="nav-logo">
+                <span>Fügefa vendégház - Balatonkenese</span>
+            </div>
             <div class="nav-links">
                 <a href="#home">Főoldal</a>
                 <a href="#about">Rólunk</a>
@@ -31,13 +34,14 @@
             <video autoplay muted loop playsinline class="hero-video" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;">
                 <source src="images/Kenese-short.mp4" type="video/mp4">
                 Your browser does not support the video tag.
+            " preload="auto" poster="images/9x16_Fig_tree_logo__minimal_style__th.png">
             </video>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Fügefa vendégház</h1>
-            <p class="hero-subtitle">Luxus pihenés a Balaton partján</p>
-            <a href="#booking" class="btn btn--primary btn--lg">Foglalás most</a>
+            <p class="hero-subtitle">Családbarát vendégház a Balaton partján</p>
+            <a href="#booking" class="btn btn--primary btn--lg">Foglalás</a>
         </div>
     </section>
 
@@ -46,14 +50,10 @@
         <div class="container">
             <h2 class="section-title">Üdvözöljük a Fügefa vendégházban</h2>
             <p class="section-description">
-                Fedezze fel ezt a lenyűgöző vendégházat Balatonkenese szívében, ahol a tó szépsége és a modern kényelem
-                találkozik.
-                Tökéletes választás nyári vakációkhoz, romantikus hétvégékhez és családi kikapcsolódáshoz.
+                Fedezze fel családjával a Fügefa vendégházat Balatonkenese kedvelt üdülőövezetében! Vendégházunk ideális választás családi nyaralásokhoz, baráti összejövetelekhez és pihentető kikapcsolódáshoz a Balaton partján.
             </p>
             <p class="section-description">
-                Vendégházunk egyedülálló szabadtéri mozival, fedett terasszal és gyönyörű Balaton-parti elhelyezkedéssel
-                várja Önöket.
-                Itt minden pillanat felejthetetlen élménnyé válik.
+                Tágas terek, biztonságos kert, szabadtéri mozi, fedett terasz és bográcsolási lehetőség várja a kicsiket és nagyokat egyaránt. Nálunk minden korosztály megtalálja a számára tökéletes kikapcsolódást!
             </p>
         </div>
     </section>
@@ -64,44 +64,115 @@
             <h2 class="section-title">Szolgáltatások</h2>
             <div class="amenities-grid">
                 <div class="amenity-card">
-                    <div class="amenity-icon">🏡</div>
+                    <div class="amenity-icon">
+                        <!-- Covered Terrace Icon (unchanged, minimal, colored, larger) -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <rect x="14" y="28" width="20" height="9" rx="4" fill="#4CAF50" />
+                          <rect x="18" y="24" width="12" height="4" rx="2" fill="#A5D6A7" />
+                          <polygon points="10,28 24,12 38,28" fill="#81C784" />
+                        </svg>
+                    </div>
                     <h3>Fedett terasz</h3>
-                    <p>Gyönyörű fedett terasz kültéri étkezéshez és pihenéshez</p>
+                    <p>Kényelmes fedett terasz családi étkezésekhez és közös beszélgetésekhez</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">🎬</div>
+                    <div class="amenity-icon">
+                        <!-- Cinema: Projector emitting light, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <rect x="12" y="28" width="24" height="10" rx="4" fill="#2196F3" />
+                          <circle cx="34" cy="33" r="3" fill="#90CAF9" />
+                          <rect x="16" y="38" width="3" height="3" rx="1.5" fill="#2196F3" />
+                          <rect x="29" y="38" width="3" height="3" rx="1.5" fill="#2196F3" />
+                          <polygon points="37,33 48,29 48,37" fill="#BBDEFB" />
+                        </svg>
+                    </div>
                     <h3>Szabadtéri mozi</h3>
-                    <p>Egyedülálló szabadtéri vetítési élmény a csillagok alatt</p>
+                    <p>Szabadtéri mozi, ahol a család együtt nézheti kedvenc filmjeit a csillagos ég alatt</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">🔥</div>
-                    <h3>Grillezési lehetőség</h3>
-                    <p>Teljes felszereltségű grillterület a teraszban</p>
+                    <div class="amenity-icon">
+                        <!-- Grill: Campfire icon, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <!-- Logs -->
+                          <rect x="16" y="36" width="16" height="4" rx="2" fill="#8D6E63" />
+                          <rect x="20" y="40" width="8" height="4" rx="2" fill="#A1887F" />
+                          <!-- Flames -->
+                          <path d="M24 18 C26 22, 32 22, 28 30 C32 28, 34 34, 24 44 C14 34, 16 28, 20 30 C18 22, 22 22, 24 18 Z" fill="#F44336" />
+                          <path d="M24 34 C26 32, 28 34, 24 38 C20 34, 22 32, 24 34 Z" fill="#FF9800" />
+                        </svg>
+                    </div>
+                    <h3>Szabadtéri tűzhely</h3>
+                    </h3>
+                    <p>Bográcsolási lehetőség a kertben, zárt tűzrakó hely a teraszon</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">📶</div>
+                    <div class="amenity-icon">
+                        <!-- WiFi: Simplified radiating signal, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <circle cx="24" cy="38" r="4" fill="#2196F3" />
+                          <path d="M16 30c4-4 12-4 16 0" stroke="#90CAF9" stroke-width="2.5" fill="none" />
+                          <path d="M8 22c8-8 24-8 32 0" stroke="#BBDEFB" stroke-width="2.5" fill="none" />
+                        </svg>
+                    </div>
                     <h3>Ingyenes WiFi</h3>
-                    <p>Nagy sebességű internet az egész házban</p>
+                    <p>Ingyenes, gyors WiFi az egész család számára</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">🚗</div>
+                    <div class="amenity-icon">
+                        <!-- Parking: Car silhouette, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <rect x="12" y="28" width="24" height="10" rx="5" fill="#757575" />
+                          <rect x="16" y="24" width="16" height="6" rx="3" fill="#BDBDBD" />
+                          <ellipse cx="18" cy="40" rx="3" ry="3" fill="#616161" />
+                          <ellipse cx="30" cy="40" rx="3" ry="3" fill="#616161" />
+                        </svg>
+                    </div>
                     <h3>Ingyenes parkolás</h3>
-                    <p>Saját parkolóhely biztosított a vendégeknek</p>
+                    <p>Ingyenes, biztonságos parkolás ház mellett, illetve a zárt udvarban</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">❄️</div>
+                    <div class="amenity-icon">
+                        <!-- AC: Snowflake, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <circle cx="24" cy="24" r="10" fill="#00BCD4" />
+                          <g stroke="#B2EBF2" stroke-width="2.5">
+                            <line x1="24" y1="8" x2="24" y2="40" />
+                            <line x1="8" y1="24" x2="40" y2="24" />
+                            <line x1="14" y1="14" x2="34" y2="34" />
+                            <line x1="34" y1="14" x2="14" y2="34" />
+                          </g>
+                        </svg>
+                    </div>
                     <h3>Légkondicionálás</h3>
-                    <p>Modern klímarendszer minden helyiségben</p>
+                    <p>Légkondicionált szobák a nyári melegben is kényelmes pihenésért</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">✨</div>
+                    <div class="amenity-icon">
+                        <!-- Equipment: Microwave oven, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <!-- Body -->
+                          <rect x="12" y="18" width="24" height="16" rx="3" fill="#BDBDBD" />
+                          <!-- Door -->
+                          <rect x="16" y="22" width="16" height="8" rx="2" fill="#FF9800" />
+                          <!-- Buttons -->
+                          <circle cx="34" cy="26" r="1.5" fill="#616161" />
+                          <circle cx="34" cy="30" r="1.5" fill="#616161" />
+                        </svg>
+                    </div>
                     <h3>Teljes felszereltség</h3>
-                    <p>Minden szükséges felszerelés és kényelem</p>
+                    <p>Teljesen felszerelt konyha és mikrohullámú sütő a családi reggelikhez és vacsorákhoz</p>
                 </div>
                 <div class="amenity-card">
-                    <div class="amenity-icon">🏖️</div>
+                    <div class="amenity-icon">
+                        <!-- Beach: Sun and waves, minimal, colored, larger -->
+                        <svg width="48" height="48" viewBox="0 0 48 48">
+                          <circle cx="12" cy="12" r="6" fill="#FFEB3B" />
+                          <path d="M24 40c4-4 12-4 16 0" stroke="#2196F3" stroke-width="3" fill="none" />
+                          <path d="M20 36c4-4 16-4 20 0" stroke="#90CAF9" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
                     <h3>Balaton-parti helyszín</h3>
-                    <p>Közvetlen közelség a Balaton partjához</p>
+                    <p>Közvetlenül a Balaton partján, a szabadstrandtól mindössze 100 méterre</p>
                 </div>
             </div>
         </div>
@@ -115,60 +186,25 @@
                 <div class="pricing-card pricing-card--high">
                     <h3>Főszezon</h3>
                     <p class="pricing-period">június-augusztus</p>
-                    <div class="pricing-amount">45,000 Ft<span>/éj</span></div>
+                    <div class="pricing-amount">65,000 Ft<span>/éj</span></div>
                 </div>
                 <div class="pricing-card pricing-card--mid">
                     <h3>Mellékszezon</h3>
                     <p class="pricing-period">április-május, szeptember</p>
-                    <div class="pricing-amount">35,000 Ft<span>/éj</span></div>
+                    <div class="pricing-amount">45,000 Ft<span>/éj</span></div>
                 </div>
                 <div class="pricing-card pricing-card--low">
                     <h3>Holtszezon</h3>
-                    <p class="pricing-period">október-március</p>
-                    <div class="pricing-amount">25,000 Ft<span>/éj</span></div>
+                    <p class="pricing-period">október</p>
+                    <div class="pricing-amount">30,000 Ft<span>/éj</span></div>
                 </div>
             </div>
             <div class="pricing-notes">
-                <p><strong>Minimum foglalás: 2 éjszaka</strong></p>
+                <p><strong>Minimum foglalás: 6 éjszaka</strong></p>
                 <p>SZÉP kártyával is fizethető</p>
             </div>
         </div>
     </section>
-
-    <!-- Gallery Section -->
-    <!-- <section id="gallery" class="section gallery">
-        <div class="container">
-            <h2 class="section-title">Galéria</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-title="Fedett terasz">
-                    <img src="images/terasz-1.jpg" alt="Fedett terasz" class="gallery-img">
-                    <h4>Fedett terasz</h4>
-                    <p>Gyönyörű fedett terasz fehér oszlopokkal, fa bútorokkal és dekoratív csempézéssel</p>
-                </div>
-            <div class="gallery-item" data-title="Felszerelt konyha">
-                <div class="gallery-placeholder gallery-placeholder--2">
-                    <div class="gallery-icon">🍽️</div>
-                    <h4>Étkezőterasz</h4>
-                    <p>Hangulatos étkezőterasz fa asztalokkal és kerti kilátással</p>
-                </div>
-            </div>
-            <div class="gallery-item" data-title="Szabadtéri mozi">
-                <div class="gallery-placeholder gallery-placeholder--3">
-                    <div class="gallery-icon">🎬</div>
-                    <h4>Szabadtéri mozi</h4>
-                    <p>Egyedi szabadtéri mozielélmény projektor képernyővel és kényelmes ülésekkel</p>
-                </div>
-            </div>
-            <div class="gallery-item" data-title="Pihenőterület">
-                <div class="gallery-placeholder gallery-placeholder--4">
-                    <div class="gallery-icon">🍷</div>
-                    <h4>Pihenőterület</h4>
-                    <p>Intimebb pihenőzóna borospohárral a fa teraszban</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 
 <!-- Gallery Section with Slider -->
@@ -193,6 +229,13 @@
                 <!-- Add more images as needed -->
             </div>
             <button class="slider-btn slider-btn--next">&#10095;</button>
+        </div>
+        <!-- Gallery Modal for large view -->
+        <div id="galleryModal" class="gallery-modal" style="display:none;">
+            <span class="gallery-modal-close">&times;</span>
+            <button class="gallery-modal-arrow gallery-modal-arrow--prev">&#10094;</button>
+            <img class="gallery-modal-img" src="" alt="">
+            <button class="gallery-modal-arrow gallery-modal-arrow--next">&#10095;</button>
         </div>
     </div>
 </section>
@@ -247,7 +290,7 @@
                         <textarea id="message" name="message" class="form-control" rows="4"
                             placeholder="Írja le esetleges különleges kéréseit..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Foglalási kérelem küldése</button>
+                    <button type="submit" class="btn btn--primary btn--full-width">Foglalás elküldése</button>
                 </form>
             </div>
         </div>
@@ -256,15 +299,21 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Kapcsolat</h2>
+            <h2 class="section-title">Kapcsolat és információ</h2>
             <div class="contact-info">
                 <div class="contact-card">
                     <h3>Dr. Kocsis Albert</h3>
-                    <p class="contact-title">Ügyeletes kapcsolattartó</p>
+                    <p class="contact-title">Kapcsolattartó</p>
                     <div class="contact-details">
-                        <p><strong>📞 Telefon:</strong> <a href="tel:+36302002941">+36 30 200 2941</a></p>
-                        <p><strong>📧 E-mail:</strong> <a href="mailto:info@partisétány.hu">info@partisétány.hu</a></p>
-                        <p><strong>📍 Cím:</strong> Balatonkenese 8174, Fügefa 102</p>
+                        <!-- <p><strong>📞 Telefon:</strong> <a href="tel:+36302002941">+36 30 200 2941</a></p> -->
+                        <p><strong>📧 E-mail:</strong> <a href="mailto:contact@fugefa-vendeghaz.com">contact@fugefa-vendeghaz.com</a></p>
+                        <p><strong>📍 Cím:</strong> 8174, Balatonkenese, Parti sétány 102 </p>
+                        <div style="margin: 12px 0;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.393964964624!2d18.10985731560119!3d47.03332497915209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769e7e2e2e2e2e3%3A0x2e2e2e2e2e2e2e2e!2sBalatonkenese%2C%20Parti%20s%C3%A9t%C3%A1ny%20102!5e0!3m2!1shu!2shu!4v1721730000000!5m2!1shu!2shu" width="100%" height="200" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div style="margin-top:4px;text-align:right;font-size:0.95em;">
+                                <a href="https://maps.app.goo.gl/qzToiCZJrcSXtACz5" target="_blank" rel="noopener" style="color:#1976d2;text-decoration:underline;">Megnyitás Google Térképen</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,17 +326,16 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Fügefa vendégház</h4>
-                    <p>Luxus pihenés a Balaton partján</p>
+                    <p>Családbarát pihenés a Balaton partján</p>
                 </div>
                 <div class="footer-section">
                     <h4>Kapcsolat</h4>
-                    <p>Dr. Kocsis Albert</p>
-                    <p>+36 30 200 2941</p>
-                    <p>info@partisétány.hu</p>
+                    <p>Fügefa vendégház - Balatonkenese</p>
+                    <p>contact@fugefa-vendeghaz.com</p>
                 </div>
                 <div class="footer-section">
                     <h4>Cím</h4>
-                    <p>8174, Balatonkenese</p>
+                    <p>8174, Balatonkenese,</p>
                     <p>Parti sétány 102</p>
                 </div>
             </div>

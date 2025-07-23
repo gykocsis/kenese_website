@@ -763,6 +763,16 @@ select.form-control {
   color: var(--color-primary);
 }
 
+.nav-logo {
+  height: 50px; /* 25% increase from 40px */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-right: 4px;
+}
+
 .nav-links {
   display: flex;
   gap: var(--space-24);

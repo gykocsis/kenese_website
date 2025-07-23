@@ -589,51 +589,128 @@ document.addEventListener('DOMContentLoaded', function () {
     images.forEach((img) => {
         img.style.cursor = 'pointer';
         img.addEventListener('click', function () {
-            showImageModal(img.src, img.alt);
+            openGallerySliderModal(Array.from(images), Array.from(images).indexOf(img));
         });
     });
 
-    function showImageModal(src, alt) {
-        // Remove existing modal
-        const existingModal = document.querySelector('.slider-image-modal');
-        if (existingModal) existingModal.remove();
+function openGallerySliderModal(imagesArr, startIndex) {
+    let currentIdx = startIndex;
+    // Remove existing modal
+    const existingModal = document.querySelector('.gallery-modal');
+    if (existingModal) existingModal.remove();
 
-        // Create modal
-        const modal = document.createElement('div');
-        modal.className = 'slider-image-modal';
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.85);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-        const imgEl = document.createElement('img');
-        imgEl.src = src;
-        imgEl.alt = alt;
-        imgEl.style.cssText = `
-            max-width: 90vw;
-            max-height: 90vh;
-            border-radius: 12px;
-            box-shadow: 0 4px 32px rgba(0,0,0,0.3);
-        `;
-        modal.appendChild(imgEl);
-        document.body.appendChild(modal);
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'gallery-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.85);
+        z-index: 3000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
 
-        // Close modal on click or escape
-        modal.addEventListener('click', () => modal.remove());
-        document.addEventListener('keydown', function escListener(e) {
-            if (e.key === 'Escape') {
-                modal.remove();
-                document.removeEventListener('keydown', escListener);
-            }
-        });
+    // Image element
+    const imgEl = document.createElement('img');
+    imgEl.style.cssText = `
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 12px;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    `;
+
+    // Navigation arrows
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '&#10094;';
+    prevBtn.className = 'gallery-modal-arrow gallery-modal-arrow--prev';
+    prevBtn.style.cssText = `
+        position: absolute;
+        left: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 48px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1;
+    `;
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '&#10095;';
+    nextBtn.className = 'gallery-modal-arrow gallery-modal-arrow--next';
+    nextBtn.style.cssText = `
+        position: absolute;
+        right: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 48px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1;
+    `;
+    // Close button
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.className = 'gallery-modal-close';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-size: 48px;
+        color: #fff;
+        cursor: pointer;
+        z-index: 2;
+    `;
+
+    function updateModalImage() {
+        imgEl.src = imagesArr[currentIdx].src;
+        imgEl.alt = imagesArr[currentIdx].alt;
     }
+    updateModalImage();
+
+    prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentIdx = (currentIdx - 1 + imagesArr.length) % imagesArr.length;
+        updateModalImage();
+    });
+    nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentIdx = (currentIdx + 1) % imagesArr.length;
+        updateModalImage();
+    });
+    closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        modal.remove();
+    });
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) modal.remove();
+    });
+    document.addEventListener('keydown', function escListener(e) {
+        if (e.key === 'Escape') {
+            modal.remove();
+            document.removeEventListener('keydown', escListener);
+        } else if (e.key === 'ArrowLeft') {
+            currentIdx = (currentIdx - 1 + imagesArr.length) % imagesArr.length;
+            updateModalImage();
+        } else if (e.key === 'ArrowRight') {
+            currentIdx = (currentIdx + 1) % imagesArr.length;
+            updateModalImage();
+        }
+    });
+
+    modal.appendChild(prevBtn);
+    modal.appendChild(imgEl);
+    modal.appendChild(nextBtn);
+    modal.appendChild(closeBtn);
+    document.body.appendChild(modal);
+}
 
     // Set initial position and start autoplay
     updateSlider();
